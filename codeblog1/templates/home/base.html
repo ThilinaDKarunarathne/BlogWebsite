@@ -3,13 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>{% block title %}
+        
+    {% endblock %} - CodeBlog</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
  
     <!--<h1>Home Page</h1> -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">Code Blog</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,17 +20,18 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                {% block ac-home %}<a class="nav-link" aria-current="page" href="/">Home</a>{% endblock %}  
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/contact">Contact</a>
+                {% block ac-con %}<a class="nav-link" href="/contact">Contact</a>{% endblock %}  
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/about">About</a>
-              </li>
+                {% block ac-blog %}<a class="nav-link" href="/blog">Blog</a>{% endblock %}  
+              </li>    
               <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
+                {% block ac-about %}<a class="nav-link" href="/about">About</a>{% endblock %}  
+              </li>        
+                           
             </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -37,7 +40,12 @@
           </div>
         </div>
       </nav>
-      <h1>Hello, world!</h1>
+      <h1>{% block name %}
+        
+      {% endblock %}</h1>
+        {% block body %}
+          
+        {% endblock %}
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
   </html>

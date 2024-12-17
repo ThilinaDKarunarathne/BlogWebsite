@@ -1,0 +1,37 @@
+{% extends 'home/base.html' %}
+{% block title %}
+  Contact
+{% endblock %}
+
+{% block ac-con %}
+    <a class="nav-link active" href="/contact">Contact</a>
+{% endblock %}
+
+{% block name %}
+  Contact
+{% endblock %}
+{% block body %}
+<div class="container">
+  <form action="/contact" method="post" >
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" name="name" id="name" aria-describedby="name">
+      </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
+     </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone No</label>
+      <input type="phone" class="form-control" name="phone" id="phone">
+      </div>
+    <div class="mb-3">
+      <label for="content" class="form-label">Describe your Issue</label>
+      <textarea type="text" class="form-control" name="content" id="content" cols="30" rows="5"></textarea>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock %}
