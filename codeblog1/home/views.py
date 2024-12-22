@@ -1,6 +1,7 @@
 from django.shortcuts import render,HttpResponse
 from .models import Contact
 from django.contrib import messages
+from datetime import datetime
 
 # Create your views here.
 
@@ -14,10 +15,11 @@ def contact (request):
         phone = request.POST['phone']
         email = request.POST['email']
         content = request.POST['content']
+        timestamp = datetime.now()
         if len(name)<2 or len(email)<3 or len(phone)<10 or len(content)<4:
             messages.error(request,"Please fill the form correctly")
         else: 
-            contact = Contact(name=name,email=email,phone=phone,content=content)
+            contact = Contact(name=name,email=email,phone=phone,content=content,timestamp=timestamp)
             contact.save()
             messages.success(request, 'Your massage was saved')
         
