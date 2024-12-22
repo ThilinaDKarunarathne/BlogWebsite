@@ -8,5 +8,15 @@
 {% endblock %}
 
 {% block name %}
- {{slug}}
+
+{% endblock %}
+
+{% block body %}
+<div class="container my-3" style="padding-top: 20px; max-width: 1000px;">
+  <article class="blog-post">
+    <h2 class="blog-post-title mb-1">{{post.title}}</h2>
+    <p class="blog-post-meta"> {{post.timestamp}} by <a href="/about">{{post.author}}</a></p>
+    <p style="text-align: justify;">{{post.content}}</p>
+  </article>
+</div>
 {% endblock %}
