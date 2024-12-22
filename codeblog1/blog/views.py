@@ -12,3 +12,4 @@ def blogpost (request,slug):
     post = Post.objects.filter(slug=slug).first()
     contex = {'post': post}
     return render(request,'blog/blogpost.html',contex)
+
