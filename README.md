@@ -68,7 +68,10 @@ This is a fully functional blog website built using the Django framework. It inc
 - Fill out the contact form to submit a message.
 
 ## Screenshots
-*(Add relevant screenshots of the blog interface, contact form, and search functionality.)*
+
+![Screenshot 2024-12-23 224641](https://github.com/user-attachments/assets/246a2365-7a1d-41fc-b996-3612d706bd5f)
+
+![Screenshot 2024-12-23 224527](https://github.com/user-attachments/assets/531a45f5-e3ec-40b5-8b00-86bb57221a8f)
 
 ## Contributions
 Contributions are welcome! Feel free to fork the repository and create a pull request with your enhancements or fixes.
